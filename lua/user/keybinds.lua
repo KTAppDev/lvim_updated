@@ -2,18 +2,16 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 local harpoon = require("harpoon")
-
--- -- REQUIRED
 harpoon:setup()
--- -- REQUIRED
+
 vim.keymap.set("n", "<M-a>", function() harpoon:list():append() end)
 vim.keymap.set("n", "<M-h>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
-    -- Change '<C-g>' here to any keycode you like.
-    vim.keymap.set('i', '<M-y>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-    vim.keymap.set('i', '<M-n>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
-    vim.keymap.set('i', '<M-b>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
-    vim.keymap.set('i', '<M-c>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+-- Change '<C-g>' here to any keycode you like.
+vim.keymap.set('i', '<M-y>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+vim.keymap.set('i', '<M-n>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+vim.keymap.set('i', '<M-b>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+vim.keymap.set('i', '<M-c>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
 
 keymap("n", "<M-w>", ":wa<cr>", { noremap = true, silent = true, desc = "Write all files" })
 keymap("n", "<M-q>", ":q<cr>", { noremap = true, silent = true, desc = "Quit all" })
@@ -39,4 +37,3 @@ keymap("t", "<right>", "", opts)
 
 lvim.keys.normal_mode["|"] = ":vsp | enew<CR>"
 lvim.keys.normal_mode["-"] = ":sp | enew<CR>"
-
