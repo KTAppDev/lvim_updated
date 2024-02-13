@@ -6,4 +6,7 @@
 require("user.plugins")
 require("user.themes")
 require("user.keybinds")
-
+require 'colorizer'.setup()
+lvim.builtin.cmp.formatting = {
+  format = require("tailwindcss-colorizer-cmp").formatter
+}
