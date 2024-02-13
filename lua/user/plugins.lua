@@ -19,9 +19,8 @@ lvim.plugins = {
     dependencies = { "nvim-lua/plenary.nvim" }
   },
   {
-  'Exafunction/codeium.vim',
-},
-  -- lazy.nvim
+    'Exafunction/codeium.vim',
+  },
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -38,14 +37,14 @@ lvim.plugins = {
     }
   },
   {
-  "roobert/tailwindcss-colorizer-cmp.nvim",
-  -- optionally, override the default options:
-  config = function()
-    require("tailwindcss-colorizer-cmp").setup({
-      color_square_width = 2,
-    })
-  end
-},
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    -- optionally, override the default options:
+    config = function()
+      require("tailwindcss-colorizer-cmp").setup({
+        color_square_width = 2,
+      })
+    end
+  },
   {
     "NvChad/nvim-colorizer.lua",
     opts = {
@@ -53,6 +52,21 @@ lvim.plugins = {
         tailwind = true,
       },
     },
+  },
+  {
+    "kyazdani42/blue-moon",
+    config = function()
+      vim.opt.termguicolors = true
+      vim.cmd "colorscheme blue-moon"
+    end
+  },
+  {
+    "sontungexpt/witch",
+    priority = 1000,
+    lazy = false,
+    config = function(_, opts)
+      require("witch").setup(opts)
+    end,
   },
 
 }
