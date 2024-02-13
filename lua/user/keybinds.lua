@@ -1,7 +1,6 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
-
 local harpoon = require("harpoon")
 
 -- -- REQUIRED
@@ -10,15 +9,18 @@ harpoon:setup()
 vim.keymap.set("n", "<M-a>", function() harpoon:list():append() end)
 vim.keymap.set("n", "<M-h>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
--- write file with localleader + w
+    -- Change '<C-g>' here to any keycode you like.
+    vim.keymap.set('i', '<M-y>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+    vim.keymap.set('i', '<M-n>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+    vim.keymap.set('i', '<M-b>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+    vim.keymap.set('i', '<M-c>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+
 keymap("n", "<M-w>", ":wa<cr>", { noremap = true, silent = true, desc = "Write all files" })
--- quit with localleader + q
 keymap("n", "<M-q>", ":q<cr>", { noremap = true, silent = true, desc = "Quit all" })
--- close buffer with localleader + x
 keymap("n", "<M-x>", ":bd<cr>", { noremap = true, silent = true, desc = "Close Buffer" })
+
 keymap("i", "jk", "<esc>", opts)
 keymap("i", "jj", "<esc> :wa<cr>", opts)
-
 
 keymap("n", "<up>", "", opts)
 keymap("n", "<down>", "", opts)
