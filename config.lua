@@ -15,10 +15,8 @@ lvim.builtin.cmp.formatting = {
   format = require("tailwindcss-colorizer-cmp").formatter
 }
 
-
 lvim.format_on_save = true
--- lvim.transparent_window = true
+lvim.transparent_window = true
 lvim.colorscheme = "witch"
--- lvim.relativenumber = true
 lvim.word_wrap = true
 vim.opt.relativenumber = true

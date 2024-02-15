@@ -53,6 +53,7 @@ lvim.plugins = {
       },
     },
   },
+  --Themes
   {
     "kyazdani42/blue-moon",
     config = function()
@@ -68,5 +69,29 @@ lvim.plugins = {
       require("witch").setup(opts)
     end,
   },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = false,
+    priority = 1000,
+    config = function(_, opts)
+      require("catppuccin").setup(opts)
+      vim.cmd.colorscheme "catppuccin"
+    end,
+  },
+
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    lazy = false,
+    priority = 1000,
+    config = function(_, opts)
+      require("rose-pine").setup(opts)
+      vim.cmd.colorscheme "rose-pine"
+    end,
+  },
+  {
+    "lunarvim/darkplus.nvim"
+  }
 
 }
