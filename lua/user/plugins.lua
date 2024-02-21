@@ -1,5 +1,11 @@
 lvim.plugins = {
   {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require('neoscroll').setup {}
+    end
+  },
+  {
     "folke/flash.nvim",
     event = "VeryLazy",
     -- @type Flash.Config
@@ -92,6 +98,6 @@ lvim.plugins = {
   },
   {
     "lunarvim/darkplus.nvim"
-  }
-
+  },
+  { "lunarvim/colorschemes" }
 }
