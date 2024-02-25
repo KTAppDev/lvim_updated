@@ -25,12 +25,8 @@ keymap("i", "jj", "<esc> :wa<cr>", opts)
 
 vim.api.nvim_set_keymap('i', '<C-j>', '<Esc>:normal! 5j<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<C-k>', '<Esc>:normal! 5k<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-j>', ':normal! 5j<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-k>', ':normal! 5k<CR>', { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap('n', '<C-l>', ':normal! 3l<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-h>', ':normal! 3h<CR>', { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap('n', '<C-j>', ':normal! 3j<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', ':normal! 3k<CR>', { noremap = true, silent = true })
 
 
 keymap("n", "<up>", "", opts)
