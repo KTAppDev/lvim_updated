@@ -3,9 +3,10 @@ local keymap = vim.api.nvim_set_keymap
 
 local harpoon = require("harpoon")
 harpoon:setup()
+lvim.builtin.which_key.mappings['h'] = {}
 
-vim.keymap.set("n", "<M-a>", function() harpoon:list():append() end)
-vim.keymap.set("n", "<M-s>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set("n", "<spce>ha", function() harpoon:list():append() end)
+vim.keymap.set("n", "<space>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
 -- Change '<C-g>' here to any keycode you like.
 vim.keymap.set('i', '<M-y>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
